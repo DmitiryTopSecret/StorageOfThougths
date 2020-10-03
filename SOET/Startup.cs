@@ -35,7 +35,7 @@ namespace SOET
             // Регистрирую нужный маршрут
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}"); // {id(?)} знак вопроса - НЕОБЯЗАТЕЛЬНЫЙ ПАРАМЕТР
             });
         }
     }
