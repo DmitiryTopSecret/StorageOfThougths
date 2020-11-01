@@ -1,0 +1,26 @@
+﻿@model IQueryable<SOET.Domain.Entities.PostItem>
+@{ 
+    SOET.Domain.Entities.TextField textField = ViewBag.TextField;
+
+    ViewBag.Title = textField.MetaTitle;
+    ViewBag.Description = textField.MetaDescription;
+    ViewBag.Keywords = textField.MetaKeywords;
+}
+
+<div>
+    @if (Model.Any())
+    {
+        <ul class="big-image-list">
+            @foreach (SOET.Domain.Entities.PostItem entity in Model)
+            {
+                <li>
+                    <a asp-area="" asp-controller="PostItems" asp-action="Index" asp-route-id="@entity.Id">
+                        <img src="~/images/@entity.TitleImagePath" alt="" class="left" />
+                    </a>
+                    <h3>@entity.Title</h3>
+                </li>
+            }
+
+        </ul>
+    }
+</div>

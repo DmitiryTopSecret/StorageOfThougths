@@ -1208,7 +1208,7 @@ input[type="radio"] + label:before {
   border-radius: 5px;
   border: 0;
   display: inline-block;
-  position: relative; }
+  position: relative; } 
   .image[data-position] img {
     -moz-object-fit: cover;
     -webkit-object-fit: cover;
@@ -1305,7 +1305,8 @@ input[type="radio"] + label:before {
       width: 100%; }
   .image.avatar {
     border-radius: 100%;
-    overflow: hidden; }
+    overflow: hidden;
+  }
     .image.avatar img {
       border-radius: 100%;
       display: block;
@@ -1317,6 +1318,10 @@ input[type="radio"] + label:before {
     border-radius: 0; }
     .image.main img {
       border-radius: 0; }
+
+    .image main{
+        visibility 50
+    }
 
 /* List */
 ol {
@@ -1659,27 +1664,28 @@ input[type="button"],
 
 /* Header */
 #header {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -moz-flex-direction: column;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -moz-justify-content: space-between;
-  -webkit-justify-content: space-between;
-  -ms-justify-content: space-between;
-  justify-content: space-between;
-  background: #4acaa8;
-  color: #d2f2e9;
-  height: 100%;
-  overflow-y: auto;
-  position: fixed;
-  text-align: center;
-  top: 0;
-  width: 23em;
-  right: 0; }
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    background: #747373;
+    color: #747373;
+    height: 100%;
+    overflow-y: auto;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 23em;
+    right: 0;
+}
   #header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
     color: #ffffff; }
     #header h1 a, #header h2 a, #header h3 a, #header h4 a, #header h5 a, #header h6 a {
@@ -2067,3 +2073,10 @@ input[type="button"],
   input[type="button"],
   .button {
     padding: 0; } }
+
+
+
+
+
+
+

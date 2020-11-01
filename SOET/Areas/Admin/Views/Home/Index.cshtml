@@ -1,0 +1,44 @@
+﻿@model IQueryable<PostItem>
+@{
+    string strTitle = "Админ-панель";
+    ViewBag.Title = strTitle;
+}
+
+<div>
+    <h1>@strTitle</h1>
+    <div>
+        <h3>Посты/Записи/Мысли</h3>
+        <div class="div-box">
+            <a asp-area="Admin" asp-controller="PostItems" asp-action="Edit" asp-route-id="">Написать пост</a>
+        </div>
+        @if (Model.Any())
+        {
+            <div>
+                @foreach (PostItem entity in Model)
+                {
+                    <div>
+                        <a asp-area="Admin" asp-controller="PostItems" asp-action="Edit" asp-route-id="@entity.Id">Редактировать</a>
+
+                        <form style="display: inline-block;" id="from-@entity.Id" asp-area="Admin" asp-controller="PostItems" asp-action="Delete" method="post">
+                            <input type="hidden" name="id" value="@entity.Id" />
+                            <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Удалить</a>
+                        </form>
+
+                        <a asp-area="" asp-controller="Posts" asp-action="Index" asp-route-id="@entity.Id">
+                            @($"{entity.Title}")
+                        </a>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+    @*<div class="div-box">
+        <h3>Редактировать содержание сайта</h3>
+        <a asp-area="Admin" asp-controller="TextFields" asp-action="Edit" asp-route-codeword="PageIndex">Главная</a>
+    </div>*@
+    <div class="div-box">
+        <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+            <input type="submit" value="Выход" />
+        </form>
+    </div>
+</div>

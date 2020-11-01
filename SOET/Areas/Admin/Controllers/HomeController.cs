@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SOET.Domain;
 
-namespace SOET.Controllers
+namespace SOET.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class HomeController : Controller
     {
         private readonly DataManager dataManager;
@@ -17,7 +18,7 @@ namespace SOET.Controllers
         }
         public IActionResult Index()
         {
-            return View(dataManager.TextFields.GetTextFieldByCodeWord("PageIndex"));
+            return View(dataManager.PostItems.GetPostItems());
         }
     }
 }
